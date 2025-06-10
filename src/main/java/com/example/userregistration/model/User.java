@@ -1,10 +1,8 @@
 package com.example.userregistration.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Data
 @Table(name = "users")
 public class User {
 
@@ -13,8 +11,38 @@ public class User {
     private Long id;
 
     private String username;
-
     private String password;
+    private String role;
 
-    private String role; // додали role
+    // Геттер для id (не обов'язково, але корисно)
+    public Long getId() {
+        return id;
+    }
+
+    // Геттер і сеттер для username
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    // Геттер і сеттер для password
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    // Геттер і сеттер для role
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
