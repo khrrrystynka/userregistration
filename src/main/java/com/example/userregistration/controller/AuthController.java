@@ -26,7 +26,7 @@ public class AuthController {
     @PostMapping("/register")
     public String register(@RequestParam String username, @RequestParam String password) {
             userService.registerUser(username, password);
-            userService.printAllUsers(); // ← Додаєш оцей виклик
+            userService.printAllUsers();
             return "redirect:/login";
         }
 

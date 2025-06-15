@@ -11,6 +11,7 @@
 
 @if(isLoggedIn)
     <p>Вітаємо, ${username}!</p>
+    <p><a href="/profile">Заповнити профіль</a></p>
     <a href="/logout">Вийти</a>
 @else
     <p>Ви не авторизовані.</p>

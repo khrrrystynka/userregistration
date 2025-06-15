@@ -13,6 +13,9 @@ public class HomeController {
     public String home(Model model, Principal principal) {
         if (principal != null) {
             model.addAttribute("username", principal.getName());
+            model.addAttribute("isLoggedIn", true); // ДОДАТИ ЦЕ
+        } else {
+            model.addAttribute("isLoggedIn", false); // ДОДАТИ ЦЕ
         }
         return "home";
     }

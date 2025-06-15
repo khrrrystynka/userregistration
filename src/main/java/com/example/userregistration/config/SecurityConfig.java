@@ -26,6 +26,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+        .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/register", "/css/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -59,10 +60,5 @@ public class SecurityConfig {
     @Bean
     public AuthenticationSuccessHandler customSuccessHandler() {
         return (AuthenticationSuccessHandler) new CustomAuthenticationSuccessHandler();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return (UserDetailsService) userDetailsService;
     }
 }
